@@ -13,7 +13,7 @@ data:
       routes:
         - receiver: slack_demo
         # Send severity=slack alerts to slack.
-          match:
+        - match:
             severity: slack
           group_wait: 10s
           repeat_interval: 15m
@@ -22,4 +22,4 @@ data:
     - name: slack_demo
       slack_configs:
       - api_url: 'https://hooks.slack.com/services/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' | default = global.slack_api_url
-        channel: '#notifications'
+        channel: 'notifications'
