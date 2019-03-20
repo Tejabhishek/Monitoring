@@ -10,7 +10,7 @@ data:
     groups:
     - name: Just a demo alert
       rules:
-      - alert: High Pod Memory
+      - alert: High Memory Usage By Containers
         expr: sum(container_memory_usage_bytes) > 1
         for: 1m
         labels:
@@ -19,8 +19,8 @@ data:
           summary: High Memory Usage
   prometheus.yml: |-
     global:
-      scrape_interval: 5s
-      evaluation_interval: 5s
+      scrape_interval: 10s
+      evaluation_interval: 10s
     rule_files:
       - /etc/prometheus/prometheus.rules
     alerting:
